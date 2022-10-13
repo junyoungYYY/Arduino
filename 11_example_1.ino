@@ -74,14 +74,14 @@ void loop() {
   }
 
   // Apply ema filter here  
-  dist_ema = _EMA_ALPHA * dist_raw + (1 - _EMA_ALPHA) * dist_ema;;
+  dist_ema = _EMA_ALPHA * dist_raw + (1 - _EMA_ALPHA) * dist_ema;
 
   // adjust servo position according to the USS read value
 
   // add your code here!
   // Use _TARGET_LOW, _TARGET_HIGH
 
-  myservo.writeMicroseconds((dist_ema - 180) * 16.388888);
+  myservo.writeMicroseconds((dist_ema - 180) * 10.27777 + 550);    // 10.277777, 16.388888
   
   // if (dist_ema >_TARGET_HIGH ) {
   //   myservo.writeMicroseconds(_DUTY_MAX);
